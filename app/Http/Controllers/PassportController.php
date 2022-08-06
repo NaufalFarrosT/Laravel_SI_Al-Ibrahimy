@@ -13,7 +13,7 @@ class PassportController extends Controller
      */
     public function index()
     {
-        //
+        return view('passport.index');
     }
 
     /**

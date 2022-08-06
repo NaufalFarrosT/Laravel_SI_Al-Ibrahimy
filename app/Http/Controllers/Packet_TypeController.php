@@ -13,7 +13,7 @@ class Packet_TypeController extends Controller
      */
     public function index()
     {
-        //
+        return view('packet.index');
     }
 
     /**

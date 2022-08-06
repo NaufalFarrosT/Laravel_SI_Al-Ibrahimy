@@ -13,11 +13,13 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Paket</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Jamaah</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Perlengkapan</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Jabatan</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Pegawai</a>
+                        <a class="nav-link" href="{{url('reservation')}}">Reservasi</a>
+                        <a class="nav-link" href="{{url('packet')}}">Paket</a>
+                        <a class="nav-link" href="{{url('passport')}}">Paspor</a>
+                        <a class="nav-link" href="{{url('customer')}}">Jamaah</a>
+                        <a class="nav-link" href="{{url('equipment')}}">Perlengkapan</a>
+                        <a class="nav-link" href="{{url('position')}}">Jabatan</a>
+                        <a class="nav-link" href="{{url('employee')}}">Pegawai</a>
                     </nav>
                 </div>
 
@@ -28,7 +30,7 @@
                 </a>
                 <div class="collapse" id="collapseTransaction" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Pembayaran</a>
+                        <a class="nav-link" href="{{url('payment')}}">Pembayaran</a>
                         <a class="nav-link" href="layout-static.html">Pengeluaran</a>
                     </nav>
                 </div>
