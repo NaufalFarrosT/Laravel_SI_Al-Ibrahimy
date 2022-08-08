@@ -9,7 +9,7 @@
                     <label >Data Jabatan</label> 
                 </div>
                 <div style="margin-right: 20px; margin-left:auto; ">
-                    <a type="button" class="btn btn-primary" href="{{route('position.create')}}" style=" width:300px;">TAMBAH JABATAN</a>
+                    <a type="button" class="btn btn-primary" href="{{route('position_create')}}" style=" width:300px;">TAMBAH JABATAN</a>
                 </div>
             </div>
             <div class="card-body">
