@@ -34,3 +34,7 @@ Route::get('payment',[PaymentController::class, 'index']);
 Route::get('equipment',[EquipmentController::class, 'index']);
 Route::get('customer',[CustomerController::class, 'index']);
 Route::get('passport',[PassportController::class, 'index']);
+
+Route::get('/tambahJabatan', function(){
+    return view('position.create');
+})->name('position_create');
