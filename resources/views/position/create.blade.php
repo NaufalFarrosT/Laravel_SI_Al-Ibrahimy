@@ -14,6 +14,12 @@
         </div>
 
         <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Tempat Lahir</label>
+            <input type="text" class="form-control" id="custDOBPlace">
+        </div>
+        
+
+        <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Tanggal Lahir</label>
             <input type="date" class="form-control" id="custDOB">
         </div>
@@ -43,7 +49,7 @@
             <input type="password" class="form-control" id="custGender">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
 </div>
 @endsection
