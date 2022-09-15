@@ -26,10 +26,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('position',[PositionController::class, 'index']);
-Route::get('/tambahJabatan', function(){
-    return view('position.create');
-})->name('position_create');
+Route::controller(PositionController::class)->group(function () {
+    Route::get('position', 'index')->name('position');
+    Route::get('position/tambahJabatan', 'create')->name('position_create');
+    Route::post('position_add', 'store');
+});
 
 Route::get('employee',[EmployeeController::class, 'index']);
 

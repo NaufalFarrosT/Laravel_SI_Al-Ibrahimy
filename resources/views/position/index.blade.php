@@ -29,19 +29,12 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>Pemilik</td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>Manajer</td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>Marketing</td>
-                        </tr>
-
+                        @foreach($positions as $pos)
+                            <tr>
+                                <td>{{ $pos->id }}</td>
+                                <td>{{ $pos->positionName }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Position;
 use Illuminate\Http\Request;
+use DB;
 
 class PositionController extends Controller
 {
@@ -13,7 +15,9 @@ class PositionController extends Controller
      */
     public function index()
     {
-        return view('position.index');
+        $positions = DB::table('positions')->get();
+
+        return view('position.index',['positions' => $positions]);
     }
 
     /**
@@ -23,7 +27,9 @@ class PositionController extends Controller
      */
     public function create()
     {
-        //
+        $lastID=DB::table('positions')->max('id');
+
+        return view('position.create',['lastID'=> $lastID+1]);
     }
 
     /**
@@ -34,7 +40,12 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new Position();
+        
+        $data->id=$request->get('positionID');
+        $data->positionName=$request->get('positionName');
+        $data->save();
+        return redirect()->route('position');
     }
 
     /**
