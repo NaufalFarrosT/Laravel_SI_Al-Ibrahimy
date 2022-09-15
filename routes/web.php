@@ -27,14 +27,30 @@ Route::get('/', function () {
 });
 
 Route::get('position',[PositionController::class, 'index']);
-Route::get('employee',[EmployeeController::class, 'index']);
-Route::get('reservation',[Reservation_NoteController::class, 'index']);
-Route::get('packet',[Packet_TypeController::class, 'index']);
-Route::get('payment',[PaymentController::class, 'index']);
-Route::get('equipment',[EquipmentController::class, 'index']);
-Route::get('customer',[CustomerController::class, 'index']);
-Route::get('passport',[PassportController::class, 'index']);
-
 Route::get('/tambahJabatan', function(){
     return view('position.create');
 })->name('position_create');
+
+Route::get('employee',[EmployeeController::class, 'index']);
+
+Route::get('reservation',[Reservation_NoteController::class, 'index']);
+Route::get('/tambahReservasi', function(){
+    return view('reservation.create');
+})->name('reservation_create');
+
+Route::get('packet',[Packet_TypeController::class, 'index']);
+
+Route::get('payment',[PaymentController::class, 'index']);
+
+Route::get('equipment',[EquipmentController::class, 'index']);
+
+
+Route::get('customer',[CustomerController::class, 'index']);
+Route::get('/tambahJamaah', function(){
+    return view('customer.create');
+})->name('customer_create');
+
+Route::get('passport',[PassportController::class, 'index']);
+
+
+
