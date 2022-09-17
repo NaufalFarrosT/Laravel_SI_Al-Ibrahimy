@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User::factory(10)->create();
+        DB::table('positions')->insert([
+            'positionName' => 'Dev',
+        ]);
+
+        DB::table('packets')->insert([
+            'packetName'=>'Umroh November 2022',
+            'departureDate'=>'2022-11-10',
+            'arrivalDate'=>'2022-11-23',
+            'totalPrice'=> 31000000
+        ]);
     }
 }
