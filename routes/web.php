@@ -39,7 +39,11 @@ Route::get('/tambahReservasi', function(){
     return view('reservation.create');
 })->name('reservation_create');
 
-Route::get('packet',[Packet_TypeController::class, 'index']);
+Route::controller(Packet_TypeController::class)->group(function () {
+    Route::get('packet', 'index')->name('packet');
+    Route::get('packet/tambahPacket', 'create')->name('packet_create');
+    Route::post('packet_add', 'store');
+});
 
 Route::get('payment',[PaymentController::class, 'index']);
 
