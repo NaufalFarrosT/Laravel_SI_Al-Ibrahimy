@@ -22,12 +22,18 @@
                             <th>Nama Paket</th>
                             <th>Tanggal Keberangkatan</th>
                             <th>Tanggal Kedatangan</th>
+                            <th>Harga Paket</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>Kode</th>
                             <th>Nama Jabatan</th>
+                            <th>Tanggal Keberangkatan</th>
+                            <th>Tanggal Kedatangan</th>
+                            <th>Harga Paket</th>
+                            <th></th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -35,6 +41,14 @@
                             <tr>
                                 <td>{{ $packet->id }}</td>
                                 <td>{{ $packet->packetName }}</td>
+                                <?php
+                                    echo "<td> ".date('d-m-Y', strtotime($packet->departureDate))."</td>";
+                                    echo "<td> ".date('d-m-Y', strtotime($packet->arrivalDate))."</td>";
+                                ?>
+                                <td>{{ $packet->totalPrice }}</td>
+                                <td style="width:5%;">
+                                    <a href="#modalEdit" class='btn btn-primary btn-sm' onclick="">Detail</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

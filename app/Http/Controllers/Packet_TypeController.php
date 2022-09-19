@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class Packet_TypeController extends Controller
 {
@@ -13,7 +14,9 @@ class Packet_TypeController extends Controller
      */
     public function index()
     {
-        return view('packet.index');
+        $packets = DB::table('packets')->get();
+
+        return view('packet.index',['packets'=>$packets]);
     }
 
     /**
