@@ -44,8 +44,8 @@
                                 <?php
                                     echo "<td> ".date('d-m-Y', strtotime($packet->departureDate))."</td>";
                                     echo "<td> ".date('d-m-Y', strtotime($packet->arrivalDate))."</td>";
+                                    echo "<td>Rp ".number_format($packet->totalPrice,0,',','.')."</td>";
                                 ?>
-                                <td>{{ $packet->totalPrice }}</td>
                                 <td style="width:5%;">
                                     <a href="#modalEdit" class='btn btn-primary btn-sm' onclick="">Detail</a>
                                 </td>
