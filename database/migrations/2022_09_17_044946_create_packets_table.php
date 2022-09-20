@@ -18,6 +18,7 @@ class CreatePacketsTable extends Migration
             $table->string('packetName');
             $table->date('departureDate');
             $table->date('arrivalDate');
+            $table->string('description');
             $table->integer('totalPrice');
 
             $table->timestamps();

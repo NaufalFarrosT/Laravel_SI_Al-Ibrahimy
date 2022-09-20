@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             'packetName'=>'Umroh November 2022',
             'departureDate'=>'2022-11-10',
             'arrivalDate'=>'2022-11-23',
+            'description'=>'Hotel Grand Al-Masa (Makkah), Hotel Rawabi Al-Zahra (Madinah)',
             'totalPrice'=> 31000000
         ]);
     }
