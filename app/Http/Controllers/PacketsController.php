@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Packet;
 use Illuminate\Http\Request;
 use DB;
 
-class Packet_TypeController extends Controller
+class PacketsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class Packet_TypeController extends Controller
     {
         $packets = DB::table('packets')->get();
 
-        return view('packet.index',['packets'=>$packets]);
+        return view('packet.index',['packets' => $packets]);
     }
 
     /**
@@ -26,7 +27,9 @@ class Packet_TypeController extends Controller
      */
     public function create()
     {
-        //
+        $lastID=DB::table('packets')->max('id');
+
+        return view('packet.create',['lastID'=> $lastID+1]);
     }
 
     /**
@@ -37,7 +40,16 @@ class Packet_TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new Packet();
+        
+        $data->id=$request->get('packetID');
+        $data->packetName=$request->get('packetName');
+        $data->departureDate=$request->get('departureDate');
+        $data->arrivalDate=$request->get('arrivalDate');
+        $data->description=$request->get('description');
+        $data->totalPrice=$request->get('totalPrice');
+        $data->save();
+        return redirect()->route('packet');
     }
 
     /**

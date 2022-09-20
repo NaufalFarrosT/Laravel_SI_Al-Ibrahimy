@@ -3,7 +3,7 @@
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EquipmentController;
-use App\Http\Controllers\Packet_TypeController;
+use App\Http\Controllers\PacketsController;
 use App\Http\Controllers\PassportController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PositionController;
@@ -39,9 +39,9 @@ Route::get('/tambahReservasi', function(){
     return view('reservation.create');
 })->name('reservation_create');
 
-Route::controller(Packet_TypeController::class)->group(function () {
+Route::controller(PacketsController::class)->group(function () {
     Route::get('packet', 'index')->name('packet');
-    Route::get('packet/tambahPacket', 'create')->name('packet_create');
+    Route::get('packet/tambahPaket', 'create')->name('packet_create');
     Route::post('packet_add', 'store');
 });
 
