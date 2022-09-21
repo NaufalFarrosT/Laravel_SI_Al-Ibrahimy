@@ -15,7 +15,7 @@
             </div>
 
             <div class="card-body">
-                <table id="datatablesSimple">
+                <table id="datatablesSimple" >
                     <thead>
                         <tr>
                             <th>Kode</th>
@@ -23,6 +23,7 @@
                             <th>Tanggal Keberangkatan</th>
                             <th>Tanggal Kedatangan</th>
                             <th>Harga Paket</th>
+                            <th>Deskripsi</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -33,6 +34,7 @@
                             <th>Tanggal Keberangkatan</th>
                             <th>Tanggal Kedatangan</th>
                             <th>Harga Paket</th>
+                            <th>Deskripsi</th>
                             <th></th>
                         </tr>
                     </tfoot>
@@ -46,6 +48,7 @@
                                     echo "<td> ".date('d-m-Y', strtotime($packet->arrivalDate))."</td>";
                                     echo "<td>Rp ".number_format($packet->totalPrice,0,',','.')."</td>";
                                 ?>
+                                <td>{{ $packet->description }}</td>
                                 <td style="width:5%;">
                                     <a href="#modalEdit" class='btn btn-primary btn-sm' onclick="">Detail</a>
                                 </td>
