@@ -25,5 +25,16 @@ class DatabaseSeeder extends Seeder
             'description'=>'Hotel Grand Al-Masa (Makkah), Hotel Rawabi Al-Zahra (Madinah)',
             'totalPrice'=> 31000000
         ]);
+
+        DB::table('customers')->insert([
+            'NIK'=>'1234567890',
+            'custName'=>'Fulan',
+            'custDOB'=>'2022-11-23',
+            'custAddress'=>'Jl. A.Yani 32, Waru, Sidoarjo',
+            'custGender'=> "Pria",
+            'custTelpNumber'=> 6281211111111,
+            'custJob'=> 'Pelajar',
+            'custJobAddress'=> 'Jl. Oke universitas ulala'
+        ]);
     }
 }
