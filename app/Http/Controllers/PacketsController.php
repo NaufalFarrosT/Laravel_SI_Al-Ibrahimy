@@ -27,9 +27,7 @@ class PacketsController extends Controller
      */
     public function create()
     {
-        $lastID=DB::table('packets')->max('id');
-
-        return view('packet.create',['lastID'=> $lastID+1]);
+        return view('packet.create');
     }
 
     /**
@@ -41,7 +39,7 @@ class PacketsController extends Controller
     public function store(Request $request)
     {
         $data=new Packet();
-        
+
         $data->id=$request->get('packetID');
         $data->packetName=$request->get('packetName');
         $data->departureDate=$request->get('departureDate');
