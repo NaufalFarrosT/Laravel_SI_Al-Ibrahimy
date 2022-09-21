@@ -33,6 +33,9 @@
                             <tr>
                                 <td>{{ $pos->id }}</td>
                                 <td>{{ $pos->positionName }}</td>
+                                <td style="width:5%;">
+                                    <a href="#modalEdit" class='btn btn-primary btn-sm' onclick="">Detail</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
