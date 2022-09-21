@@ -10,9 +10,11 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="{{ asset('assets/css/styles.css')}}" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
     </head>
     <body class="sb-nav-fixed">
-        
+
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">SI AL-IBRAHIMY</a>
@@ -42,10 +44,10 @@
                 </li>
             </ul>
         </nav>
-        
+
         <div id="layoutSidenav">
             @include('layouts.sidenav')
-            
+
             <div id="layoutSidenav_content">
                 @yield('content')
                 <footer class="py-4 bg-light mt-auto">

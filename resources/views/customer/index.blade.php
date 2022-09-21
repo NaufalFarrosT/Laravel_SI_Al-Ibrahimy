@@ -21,7 +21,7 @@
                         <th>Tanggal Lahir</th>
                         <th>Alamat</th>
                         <th>Kelamin</th>
-                        <th>Kode</th>
+                        <th>No.Hp</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -32,38 +32,25 @@
                         <th>Tanggal Lahir</th>
                         <th>Alamat</th>
                         <th>Kelamin</th>
-                        <th>Kode</th>
+                        <th>No.Hp</th>
                         <th></th>
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>341213123861823</td>
-                        <td>Eden Hazard</td>
-                        <td>20 Desember 1987</td>
-                        <td>Jl. Raya Banjar Kemuning RT 10 RW 03 No.35, Banjar Kemuning, Sedati, Sidoarjo</td>
-                        <td>Laki-Laki</td>
-                        <td>01</td>
-                        <td style="width:7%;">
-                            <a href="#modalEdit" class='btn btn-primary btn-sm' onclick="">EDIT</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>351213123861823</td>
-                        <td>Eden Hazard</td>
-                        <td>20 Desember 1987</td>
-                        <td>Jl. Raya Banjar Kemuning RT 10 RW 03 No.35, Banjar Kemuning, Sedati, Sidoarjo</td>
-                        <td>Laki-Laki</td>
-                        <td>01</td>
-                    </tr>
-                    <tr>
-                        <td>351213123861823</td>
-                        <td>Eden Hazard</td>
-                        <td>20 Desember 1987</td>
-                        <td>Jl. Raya Banjar Kemuning RT 10 RW 03 No.35, Banjar Kemuning, Sedati, Sidoarjo</td>
-                        <td>Laki-Laki</td>
-                        <td>01</td>
-                    </tr>
+
+                    @foreach($customers as $cust)
+                        <tr>
+                            <td>{{ $cust->NIK }}</td>
+                            <td>{{ $cust->custName }}</td>
+                            <td>{{ $cust->custDOB }}</td>
+                            <td>{{ $cust->custAddress }}</td>
+                            <td>{{ $cust->custGender }}</td>
+                            <td>{{ $cust->custTelpNumber }}</td>
+                            <td style="width:5%;">
+                                <a href="#modalEdit" class='btn btn-primary btn-sm' onclick="">Detail</a>
+                            </td>
+                        </tr>
+                    @endforeach
 
                 </tbody>
             </table>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
+use DB;
 
 class CustomerController extends Controller
 {
@@ -13,7 +15,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('customer.index');
+        $customers = DB::table('customers')->get();
+
+        return view('customer.index',['customers' => $customers]);
     }
 
     /**
@@ -23,7 +27,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('customer.create');
     }
 
     /**
@@ -34,7 +38,18 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new Customer();
+
+        $data->NIK=$request->get('NIK');
+        $data->custName=$request->get('custName');
+        $data->custDOB=$request->get('custDOB');
+        $data->custAddress=$request->get('custAddress');
+        $data->custGender=$request->get('custGender');
+        $data->custTelpNumber=$request->get('custNumber');
+        $data->custJob=$request->get('custJob');
+        $data->custJobAddress=$request->get('custJobAddress');
+        $data->save();
+        return redirect()->route('customer');
     }
 
     /**

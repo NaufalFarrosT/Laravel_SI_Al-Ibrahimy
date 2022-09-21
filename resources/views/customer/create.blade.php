@@ -2,45 +2,49 @@
 
 @section('content')
 <div class="container-fluid px-4" style="padding-top:5px;">
-    <form role="form">
+    <form role="form" method="POST" action="{{url('customer_add')}}">
+    @csrf
         <div class="mb-3">
             <label class="form-label">Nomor Induk Kewarganegaraan</label>
-            <input type="text" class="form-control" id="custID">
+            <input type="text" class="form-control" id="NIK" name="NIK">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" id="custName">
+            <input type="text" class="form-control" id="custName" name="custName">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Tanggal Lahir</label>
-            <input type="date" class="form-control" id="custDOB">
+            <input type="date" class="form-control" id="custDOB" name="custDOB">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Alamat</label>
-            <input type="text" class="form-control" id="custAddress">
+            <input type="text" class="form-control" id="custAddress" name="custAddress">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Kelamin</label>
-            <input type="password" class="form-control" id="custGender">
+            <select name="custGender" id="custGender" name="custGender">
+                <option value="Pria">PRIA</option>
+                <option value="Wanita">WANITA</option>
+            </select>
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Nomor Telepon</label>
-            <input type="number" class="form-control" id="custNumber">
+            <input type="number" class="form-control" id="custNumber" name="custNumber">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Pekerjaan atau Tempat Belajar</label>
-            <input type="text" class="form-control" id="custJobs">
+            <input type="text" class="form-control" id="custJob" name="custJob">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Alamat Pekerjaan atau Tempat Belajar</label>
-            <input type="password" class="form-control" id="custGender">
+            <input type="text" class="form-control" id="custJobAddress" name="custJobAddress">
         </div>
 
         <div class="mb-3">

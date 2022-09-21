@@ -49,11 +49,11 @@ Route::get('payment',[PaymentController::class, 'index']);
 
 Route::get('equipment',[EquipmentController::class, 'index']);
 
-
-Route::get('customer',[CustomerController::class, 'index']);
-Route::get('/tambahJamaah', function(){
-    return view('customer.create');
-})->name('customer_create');
+Route::controller(CustomerController::class)->group(function () {
+    Route::get('customer', 'index')->name('customer');
+    Route::get('customer/tambahCustomer', 'create')->name('customer_create');
+    Route::post('customer_add', 'store');
+});
 
 Route::get('passport',[PassportController::class, 'index']);
 
