@@ -3,14 +3,15 @@
 @section('content')
 <div class="container-fluid px-4" style="padding-top:5px;">
     <form role="form">
+    @csrf
         <div class="mb-3">
             <label class="form-label">Kode</label>
             <input type="text" class="form-control" id="resID" disabled>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 form-group">
             <label for="exampleInputPassword1" class="form-label">Jamaah</label>
-            <input type="text" class="form-control" id="resCust" value="AutoComplete">
+            <input type="text" class="form-control typeahead" id="resCust" name="resCust">
         </div>
 
         <div class="mb-3">
@@ -41,5 +42,18 @@
 
         <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
+
+    <script type="text/javascript">
+        var route = "{{ route('customer_search') }}";
+        $('#resCust').typeahead({
+            source: function (query, process){
+                return $.get(route, {
+                    query: query
+                }, function(data){
+                    return process(data);
+                });
+            }
+        });
+    </script>
 </div>
 @endsection

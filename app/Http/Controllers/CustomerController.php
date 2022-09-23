@@ -96,4 +96,13 @@ class CustomerController extends Controller
     {
         //
     }
+
+    public function search_autoComplete(Request $request){
+        $query = $request->get('query');
+        
+        $searchResult = Customer::select("custName","custAddress")
+                        ->where('custName','LIKE', '%'.$query.'%')->pluck("custName");
+
+        return response()->json($searchResult);
+    }
 }

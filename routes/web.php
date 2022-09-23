@@ -53,6 +53,7 @@ Route::controller(CustomerController::class)->group(function () {
     Route::get('customer', 'index')->name('customer');
     Route::get('customer/tambahCustomer', 'create')->name('customer_create');
     Route::post('customer_add', 'store');
+    Route::get('/tambahReservasi/searchCustomer', 'search_autoComplete')->name('customer_search');
 });
 
 Route::get('passport',[PassportController::class, 'index']);
